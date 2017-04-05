@@ -59,8 +59,17 @@
             </p>
             </form>
         <?php endif; ?>
+        <?php 
+            if(isset($_SESSION['sescoo']))
+            {
+              $_SESSION=array();
+              unset($_SESSION);
+              session_destroy();
+            }
+        ?>
         <p><a href=".?action=show_add_item">Add Item</a></p>
         <p><a href=".?action=empty_cart">Empty Cart</a></p>
+        <p><a href=".?action=end_session">End Session and Delete Cookie</a></p>
 
     </main>
 </body>

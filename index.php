@@ -1,8 +1,14 @@
 <?php
-// Start session management with a persistent cookie
-$lifetime = 60 * 60 * 24 * 14;    // 2 weeks in seconds
-session_set_cookie_params($lifetime, '/');
+//Start session management with a session cookie
+// $name = 'sescoo' ; //
+// $expire = '0' ; //
+// $path = '/' ; //
+$lifetime = 60*60*24*1095 ; //3 years//
+//setcookie($name, $expire, $path); //
+session_set_cookie_params($lifetime, '/');   
 session_start();
+echo session_id();
+
 
 // Create a cart array if needed
 if (empty($_SESSION['cart'])) { $_SESSION['cart'] = array(); }
